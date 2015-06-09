@@ -18,7 +18,11 @@ The task is:
       + install Python Imaging Library;
       + install pytesser;
 
-Notes: please, make sure you read "Interdependency with HarfBuzz" of docs/INSTALL* file of freetype library.
+Notes:
+   - please, make sure you read "Interdependency with HarfBuzz" of docs/INSTALL* file of freetype library.
+   - while building PIL got an error "fatal error: freetype/fterrors.h: No such file or directory", so to fix it on my Ubuntu machine:
+      * sudo apt-get build-dep python-imaging and
+      * sudo ln -s -T /usr/include/freetype2/ /usr/include/freetype
 
 ======================================================================================
 
