@@ -22,7 +22,11 @@ Notes:
    - please, make sure you read "Interdependency with HarfBuzz" of docs/INSTALL* file of freetype library.
    - while building PIL got an error "fatal error: freetype/fterrors.h: No such file or directory", so to fix it on my Ubuntu machine:
       * sudo apt-get build-dep python-imaging and
-      * sudo ln -s -T /usr/include/freetype2/ /usr/include/freetype
+      * sudo ln -s -T /usr/include/freetype2/ /usr/include/freetype and
+      * # ln -s /usr/lib/`uname -i`-linux-gnu/libfreetype.so /usr/lib/ in case of "--- FREETYPE2 support not available"
+      * # ln -s /usr/lib/`uname -i`-linux-gnu/libjpeg.so /usr/lib/ in case of "--- JPEG support not available"
+      * # ln -s /usr/lib/`uname -i`-linux-gnu/libz.so /usr/lib/ in case of "--- ZLIB (PNG/ZIP) support not available"
+
 
 ======================================================================================
 
