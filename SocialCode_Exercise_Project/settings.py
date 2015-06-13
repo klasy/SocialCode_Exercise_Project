@@ -25,6 +25,8 @@ SECRET_KEY = '_w+=!gz3q_#5^k1y5@mbk+ejzc%-u+i5ys2@%$6p6uh_8j-(wn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+TEMPLATE_DEBUG = True
+
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'image_recognition',
+    'filetransfers',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,6 +56,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'SocialCode_Exercise_Project.urls'
 
+'''
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -66,7 +71,7 @@ TEMPLATES = [
             ],
         },
     },
-]
+]'''
 
 WSGI_APPLICATION = 'SocialCode_Exercise_Project.wsgi.application'
 
@@ -100,3 +105,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+PREPARE_UPLOAD_BACKEND = 'filetransfers.backends.default.prepare_upload'
+SERVE_FILE_BACKEND = 'filetransfers.backends.default.serve_file'
+
+MEDIA_ROOT = '/home/irina/Pictures/'

@@ -16,6 +16,11 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+admin.autodiscover()
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+
+    # Here we add recognize image url
+    url(r'^image_recognition/$', include('image_recognition.urls')),
 ]
